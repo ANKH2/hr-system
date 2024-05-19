@@ -27,7 +27,6 @@ export default function AdminDrawerFormEdit({ id }) {
         getAllHrList().then((res) => {});
     }, []);
 
-    console.log(candidateList);
     const [formData, setFormData] = useState({
         candidateId: edittingRowInfo?.candidateId?._id,
         hrOfficerId: edittingRowInfo?.hr._id,
@@ -67,7 +66,7 @@ export default function AdminDrawerFormEdit({ id }) {
                         <option value=''>Сонгоорой...</option>
                         {candidateList.map(
                             (candidate) =>
-                                candidate.isSelected && (
+                                candidate.type ==="processing" && (
                                     <option key={candidate?._id} value={candidate?._id}>
                                         {candidate?.lastName} {candidate?.firstName}
                                     </option>
